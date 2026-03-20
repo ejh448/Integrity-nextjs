@@ -11,7 +11,7 @@ const Quote = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_wprru9e', 'template_z3up5sc', form.current, '0Lm770FCR0AZD38iq')
+    emailjs.sendForm('', '', form.current, '')
       .then(() => {
         alert('Thank you for submitting a quote, we will respond shortly!');
         form.current.reset();
