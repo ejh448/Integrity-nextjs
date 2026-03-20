@@ -1,0 +1,231 @@
+/* ==============================
+   SECTION
+================================ */
+
+.carousel-section{
+  width:100%;
+  padding:100px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* ==============================
+   HEADER
+================================ */
+
+.carousel-header{
+  text-align:center;
+  max-width:700px;
+  margin-bottom:50px;
+}
+
+.carousel-eyebrow{
+  display:block;
+  font-size:.8rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--clr-primary-light);
+  margin-bottom:10px;
+}
+
+.carousel-header h2{
+  font-size:clamp(2rem,4vw,2.6rem);
+  font-weight:800;
+  color:var(--white);
+  margin-bottom:12px;
+}
+
+.carousel-header p{
+  color:rgba(255,255,255,.8);
+}
+
+/* ==============================
+   CAROUSEL
+================================ */
+
+.carousel-container{
+  position:relative;
+  width:100%;
+  max-width:1000px;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+/* track */
+
+.carousel-track{
+  display:flex;
+  transition:transform .7s cubic-bezier(.4,.0,.2,1);
+}
+
+/* slides */
+
+.carousel-slide{
+  min-width:100%;
+  height:420px;
+  position:relative;
+  flex-shrink:0;
+}
+/* ==============================
+   CAPTION
+================================ */
+
+.carousel-caption{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(5px);
+  color:white;
+  padding:10px 20px;
+  border-radius:12px;
+  font-size:.95rem;
+  max-width:85%;
+  text-align:center;
+}
+
+/* ==============================
+   ARROWS
+================================ */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* reset button defaults */
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+
+  border-radius: 50%;
+  background: #ffffff;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 1.4rem;
+  line-height: 1;
+
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.carousel-arrow:hover{
+  transform:translateY(-50%) scale(1.05);
+}
+
+.carousel-arrow.left{
+  left:16px;
+}
+
+.carousel-arrow.right{
+  right:16px;
+}
+
+/* ==============================
+   DOTS
+================================ */
+
+.carousel-dots{
+  margin-top:22px;
+  display:flex;
+  gap:10px;
+}
+
+.dot {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+
+  display: block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ffffff;
+  transform: scale(1.2);
+}
+
+/* ==============================
+   MOBILE
+================================ */
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px){
+
+/* section spacing */
+
+.carousel-section{
+  padding:70px 16px;
+}
+
+/* header spacing */
+
+.carousel-header{
+  margin-bottom:35px;
+}
+
+/* make image scale with screen */
+
+.carousel-slide{
+  height:clamp(220px,55vw,300px);
+}
+
+/* arrows smaller and inside image */
+
+.carousel-arrow{
+  width:36px;
+  height:36px;
+  font-size:1.2rem;
+}
+
+/* move arrows inward */
+
+.carousel-arrow.left{
+  left:10px;
+}
+
+.carousel-arrow.right{
+  right:10px;
+}
+
+/* caption improvements */
+
+.carousel-caption{
+  font-size:.82rem;
+  padding:8px 14px;
+  bottom:14px;
+  max-width:92%;
+}
+
+/* dots */
+
+.carousel-dots{
+  margin-top:18px;
+  gap:8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+}
+
+}

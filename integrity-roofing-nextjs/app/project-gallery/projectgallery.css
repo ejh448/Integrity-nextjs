@@ -1,0 +1,155 @@
+/* -----------------------------
+   Project Gallery Container
+-------------------------------- */
+.project-gallery {
+  width: 100%;
+  max-width: 1200px; /* optional, controls maximum width */
+  margin: 0 auto; /* centers the container */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers heading, masonry, and pagination */
+}
+
+/* -----------------------------
+   Heading
+-------------------------------- */
+.project-gallery h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+/* -----------------------------
+   Masonry Grid
+-------------------------------- */
+.my-masonry-grid {
+  display: flex;
+  justify-content: center; /* center all columns */
+  margin-left: 0 !important; /* override Masonry negative margin */
+  width: auto !important; /* shrink to fit columns */
+  gap: 20px; /* spacing between columns */
+}
+
+.my-masonry-grid_column {
+  background-clip: padding-box;
+  padding-left: 0; /* gutter is handled by grid gap */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between cards vertically */
+}
+
+/* -----------------------------
+   Gallery Cards
+-------------------------------- */
+.gallery-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Images */
+.gallery-card img {
+  width: 100%;
+  height: 250px; /* adjust as needed */
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Info Bar at Bottom */
+.gallery-card .info-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 12px 15px;
+  background: #2A9134;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+/* -----------------------------
+   Pagination
+-------------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+  width: 100%;
+}
+
+.pagination button {
+  background: #eee;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pagination button:hover:not(.active):not(:disabled) {
+  background: #ddd;
+}
+
+.pagination button.active {
+  background: #000;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* -----------------------------
+   Responsive Adjustments
+-------------------------------- */
+@media (max-width: 1200px) {
+  .my-masonry-grid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .my-masonry-grid {
+    gap: 10px;
+  }
+
+  .gallery-card img {
+    height: 220px;
+  }
+
+  .project-gallery h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-masonry-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .gallery-card img {
+    height: 200px;
+  }
+
+  .project-gallery h1 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,174 @@
+/* =========================
+   ROOFING SERVICES WRAPPER
+========================= */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/*
+* {
+  outline: 1px solid red;
+}
+*/
+.roofing-services {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Section spacing */
+.roofing-services > div {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+
+
+  box-sizing: border-box;
+}
+
+/* Content width control */
+.roofing-services h2,
+.roofing-services h3,
+.roofing-services h4,
+.roofing-services h5,
+.roofing-services p,
+.roofing-services ul {
+  max-width: 800px;
+}
+
+/* Consistent vertical rhythm */
+.roofing-services h2,
+.roofing-services h3,
+.roofing-services h4,
+.roofing-services h5,
+.roofing-services p,
+.roofing-services ul {
+  margin-bottom: 1rem;
+}
+
+
+/* =========================
+   SECTION DIVIDERS
+========================= */
+
+.shingle-roofing,
+.standing-seam-metal {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  width: 100%;
+}
+
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+.uniform-text-size h2 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.uniform-text-size h3 {
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.uniform-text-size h4 {
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.uniform-text-size h5 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.uniform-text-size p {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  font-weight: 500;
+}
+
+.uniform-text-size ul {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  font-weight: 500;
+}
+
+.uniform-text-size li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* =========================
+   LIST STYLING
+========================= */
+
+.roofing-services ul {
+  padding-left: 1.25rem;
+}
+
+.roofing-services li {
+  margin-bottom: .4rem;
+}
+
+/* =========================
+   EYEBROW LABEL
+========================= */
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-size: .85rem;
+  margin-bottom: .5rem;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-primary);
+  border-radius: 2px;
+}
+
+
+/* =========================
+   BACKGROUND IMAGE SYSTEM
+========================= */
+
+.image-darken {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-darken::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1;
+}
+
+/* keep content above overlay */
+
+.image-darken > * {
+  position: relative;
+  z-index: 2;
+}

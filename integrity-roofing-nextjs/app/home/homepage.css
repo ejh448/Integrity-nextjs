@@ -1,0 +1,168 @@
+.homepage-carousel { /*For Custom Carousel*/
+  padding-right: 40px;
+}
+.contact-us-home .text-heading h1 {
+    color: var(--white);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.homepage-hero {
+  position: relative; /* fix sticky issue */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homepage-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(1.15);
+  transform: scale(1.1);
+  animation: zoomOut 10s ease-in-out forwards;
+  display: block;
+}
+
+/* Dark overlay */
+.homepage-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* Text overlay */
+.homepage-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* above overlay */
+  color: var(--white);
+  text-align: center;
+  padding: 0 5vw;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.homepage-text-overlay p {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  line-height: 1.5;
+  font-weight: 100;
+  padding-bottom: 40px;
+}
+
+/* Desktop / large screens */
+.hero-columns {
+  position: absolute;
+  bottom: 40px;
+  left: 49%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;      /* center all columns */
+  gap: 150px;                    /* spacing between columns */
+  width: auto;                  /* shrink-wrap columns */
+  max-width: 1200px;
+  z-index: 2;
+  color: var(--white);
+}
+
+.hero-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: none;                   /* remove flex:1 to prevent stretching */
+  min-width: 200px;
+  text-align: left;           /* center column text */
+}
+
+
+.hero-columns ul li {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+/* Mobile / tablet responsiveness */
+@media (max-width: 1024px) {
+  .homepage-text-overlay {
+    top: 30%;                 /* slightly higher for medium screens */
+    transform: translateX(-50%);
+  }
+  .homepage-text-overlay p {
+  padding-bottom: 10px;
+}
+
+  .hero-columns {
+    gap: 100px;               /* smaller gap between columns */
+  }
+
+  
+  
+}
+
+@media (max-width: 768px) {
+  .homepage-text-overlay {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 80px; /* space for nav */
+    z-index: 3;
+    text-align: left;
+  }
+
+  .homepage-hero {
+    position: relative; /* fix sticky issue */
+    width: 100%;
+  }
+
+
+  .homepage-text-overlay p {
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  .hero-columns {
+    flex-direction: column;
+    align-items: flex-start;   /* ⬅️ move block left */
+    bottom: 0;
+    gap: 20px;
+    width: 100%;
+    padding-left: 5vw;        /* ⬅️ controls how far from edge */
+  }
+
+  .hero-columns ul {
+    width: 100%;
+    padding-left: 24px;       /* optional indent */
+    margin: 0;
+    text-align: left;         /* ⬅️ left-justify text */
+    padding-bottom: 10px;
+  }
+
+  .hero-columns ul li {
+    margin-bottom: 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+}
+  
+
+
+
+
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}

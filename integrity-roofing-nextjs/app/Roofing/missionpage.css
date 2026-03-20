@@ -1,0 +1,86 @@
+.animated-mission-section-roofing {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  justify-content: center;
+}
+
+.mission-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Reverse image & text */
+.mission-reverse {
+  flex-direction: row-reverse;
+}
+
+
+
+/* Image locked to 250x250 */
+.mission-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Text */
+.mission-text h2 {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Animations */
+.animate-right {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile-friendly */
+@media (max-width: 768px) {
+  .mission-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
+/* Mobile stays stacked */
+@media (max-width: 768px) {
+  .mission-item,
+  .mission-reverse {
+    flex-direction: column;
+  }
+}

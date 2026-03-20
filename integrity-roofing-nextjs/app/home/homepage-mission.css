@@ -1,0 +1,77 @@
+.homepage-mission {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* ⬅️ image gets more space */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 6rem) 1.5rem;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+/* Image */
+/* Image wrapper */
+.mission-image {
+  position: relative;
+  border-radius: 0;      /* remove stylized rounding */
+  overflow: visible;     /* allow natural image size */
+  box-shadow: none;      /* remove depth */
+  min-height: 420px;
+  min-width: 100%;
+}
+
+/* Image itself */
+.mission-image img {
+  width: 100%;
+  height: auto;          /* natural aspect ratio */
+  object-fit: contain;  /* no cropping */
+  transform: none;      /* no scaling */
+  transition: none;     /* no animation */
+}
+
+
+.mission-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Text */
+.mission-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+/* Eyebrow / kicker text (optional but recommended) */
+.mission-text .eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var( --clr-primary-light);
+}
+
+/* Heading */
+.mission-text h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0;
+  color: var(--white);
+}
+
+/* Body */
+.mission-text p {
+  max-width: 48ch; /* 👈 modern readability rule */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+}
+
+@media (max-width: 768px) {
+  .homepage-mission {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem;
+  }
+
+  .mission-text p {
+    max-width: 100%;
+  }
+}

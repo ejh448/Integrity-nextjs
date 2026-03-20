@@ -1,0 +1,154 @@
+.where-we-build-1 .shingle-roofing {
+  padding: clamp(60px, 8vw, 120px) 0;
+
+  /* Prevent repeating and cover the section */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* =========================================
+   WHERE WE BUILD SECTION - FULL RESPONSIVE
+   ========================================= */
+.where-we-build {
+  width: 100%;
+  padding: 60px 5vw; /* use viewport width for side padding */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Card container */
+.where-we-build-card {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.01);
+  padding: 2rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Logo/Image */
+.where-we-build-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0rem;
+  transition: transform 0.3s ease;
+}
+
+.where-we-build-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Section Title */
+.where-we-build-card h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: 1.5px;
+  color: var(--white);
+  margin-bottom: 0rem;
+  position: relative;
+  text-align: left;
+}
+
+
+/* Intro Paragraph */
+.where-intro {
+  font-size: clamp(1rem, 1.5vw, 1.3rem); /* keep font similar to other text */
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.85);
+  max-width: 800px;       /* content width limit */
+  margin: 1rem auto 2rem auto; /* center the block horizontally */
+  justify-self: center; /* text itself left-aligned */
+  padding: 0 1.5rem;      /* small side padding for mobile */
+}
+
+/* Service Area List Grid */
+.service-area-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2.5rem;
+  list-style:none;
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  justify-items: center; /* center items in grid */
+}
+
+.service-area-list li {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+
+  border-radius: 10px;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 180px;
+}
+
+.service-area-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  border: 1px solid var(--clr-primary-light);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1100px) {
+
+
+  .where-we-build-card img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+
+  .where-we-build-card img {
+    width: 25%;
+    max-width: 100px;
+  }
+
+  .where-we-build-card h1 {
+    font-size: clamp(2.6rem, 5vw, 2.6rem);
+    text-align: left;
+  }
+
+    .where-intro {
+    max-width: 100%;       /* use full width on small screens */
+    margin: 1rem auto 1.5rem auto; /* maintain centered block */
+    padding: 0 1.5rem;    /* prevent text hugging edges */
+    font-size: clamp(1rem, 2vw, 1.15rem); /* scale slightly smaller if needed */
+  }
+
+  .service-area-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+  }
+
+  .service-area-list li {
+    max-width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+}
+

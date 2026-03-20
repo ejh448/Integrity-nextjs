@@ -1,0 +1,139 @@
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== Footer Base (NO padding) ===== */
+.footer {
+  background: linear-gradient(180deg, #1f1f1f, #121212);
+  color: #fff;
+  border-top: 1px solid #2a2a2a;
+  width: 100%;
+}
+
+/* Inner container controls width + padding */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 5vw 30px;
+  box-sizing: border-box;
+}
+
+
+/* Grid Layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-column {
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+
+.footer-column:nth-child(2) { animation-delay: 0.15s; }
+.footer-column:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-column h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-column h4::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  background-color: #f59e0b;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.footer-column h4::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  background-color: var(--clr-primary);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* Text & Links */
+.footer-column p,
+.footer-column a {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Social Icons */
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  background: #f59e0b;
+  transform: translateY(-3px);
+  color: #000;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9a9a9a;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 50px 60px 25px;
+  }
+}

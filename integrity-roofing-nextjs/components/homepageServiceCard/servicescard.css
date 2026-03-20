@@ -1,0 +1,151 @@
+.service-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 5px;
+  overflow: hidden;
+  isolation: isolate;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* The actual image container */
+.service-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Dark gradient overlay */
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.85),
+    rgba(10, 10, 10, 0.2),
+    rgba(10, 10, 10, 0)
+  );
+  z-index: 1;
+}
+
+/* Content */
+.service-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.service-card-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(118, 244, 118, 0.857);
+  text-shadow: 1px 2px 1px rgb(0, 0, 0);
+  text-align: center;
+}
+
+.service-card-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2; /* <-- Fix */
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.service-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+
+  color: rgba(255,255,255,0.95);
+
+  padding: 14px 16px;
+  margin-top: 6px;
+
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(.3px);
+
+  border-left: 3px solid var(--clr-primary-light);
+  border-radius: 4px;
+
+  text-align: left;
+}
+
+.service-card-content.top {
+  padding: 0;
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card-content.bottom {
+  padding: 28px;
+}
+
+.service-card-button {
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+  
+.service-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+.service-card-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  filter: brightness(1);
+}
+
+
+@media (max-width: 768px) {
+  .service-card {
+
+    min-width: 90%;
+    
+  }
+
+  .service-card-title {
+    font-size: 2rem;
+  }
+
+  .service-card-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}

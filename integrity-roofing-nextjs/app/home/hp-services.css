@@ -1,0 +1,55 @@
+/* Section wrapper */
+.homepage-services {
+  width: 100%;
+  padding-bottom: 40px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px; /* add top padding above "Our Services" title */
+}
+
+
+
+/* Section title */
+.homepage-services > h1 {
+  font-size: clamp(2.8rem, 4vw, 2.8rem); /* slightly smaller, responsive */
+  font-weight: 500;                     /* lighter for modern feel */
+  letter-spacing: 1.2px;                /* subtle spacing */
+  text-align: center;
+  margin: 0 0 2rem 0;                   /* space below title */
+  position: relative;
+  color: var(--white);
+}
+
+/* Add a subtle underline / accent bar below the heading */
+.homepage-services > h1::after {
+  content: '';
+  display: block;
+  width: 120px;           /* underline width */
+  height: 3px;           /* thickness */
+  background-color: var(--clr-primary-light, #f0a500);
+  margin: 12px auto 0 auto; /* center it below text */
+  border-radius: 2px;    /* slightly rounded */
+}
+
+
+
+
+
+/* Services grid */
+.homepage-services-grid {
+  display: flex;          /* 🔑 REQUIRED */
+  flex-wrap: wrap;        /* allow wrapping */
+  justify-content: center;
+  gap: 32px;              /* spacing between cards */
+  flex-direction: row;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 20px;
+}
+
+.homepage-services-grid > * {
+  flex: 0 1 300px;   /* ← THIS enables wrapping */
+  max-width: 600px;
+}

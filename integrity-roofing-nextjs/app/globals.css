@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+
+:root {
+  /* ===== BASE TYPOGRAPHY ===== */
+    --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    font-weight: 400;
+
+    /* TYPE SCALE (rem-based for consistency) */
+    --fs-xs: 0.75rem;    /* 12px  */
+    --fs-sm: 0.875rem;   /* 14px  */
+    --fs-base: 1rem;     /* 16px  */
+    --fs-lg: 1.125rem;   /* 18px  */
+    --fs-xl: 1.25rem;    /* 20px  */
+    --fs-2xl: 1.5rem;    /* 24px  */
+    --fs-3xl: 1.875rem;  /* 30px  */
+    --fs-4xl: 2.25rem;   /* 36px  */
+    --fs-5xl: 3rem;      /* 48px  */
+    --fs-6xl: 3.75rem;   /* 60px  */
+    --fs-display: 4.5rem; /* 72px hero text */
+
+    /* ===== COLORS (Palette #1) ===== */
+    --clr-primary: #2A9134;
+    --clr-primary-dark: #1F6530;
+    --clr-dark: #1C1C1C;
+    --clr-gray-light: #E8E8E8;
+    --white: #FFFFFF;
+
+    --gray-box-bg: rgba(255, 255, 255, 0.05);
+
+    /* Optional tints/shades */
+    --clr-primary-light: #16e62b;
+    --clr-gray: #bfbfbf;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+a {
+  color: var(--clr-white);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--clr-primary-light);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--clr-dark);
+}
+
+.section-muted {
+  background: #0e1116; /* slightly lighter/darker than body */
+}
+
+.section-light {
+  background: #f7f7f7;
+  color: #111;
+}
+
+
+h1 {
+  font-size: var(--fs-5xl);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--clr-white);
+}
+
+p {
+  color: var(--clr-gray-light);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--clr-primary-light);
+  color: var(--clr-white) ;
+  border-radius: 30px;
+  box-shadow: inset;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--clr-primary-light);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/*
+.filter-overlay {
+ filter: brightness(0.6) saturate(1.2);
+}
+*/
+
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 128px;
+  background-color: var(--clr-primary-light);
+
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: .5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.26);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Circle container */
+.arrow-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* prevents shrinking */
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+/* Arrow itself */
+.arrow {
+  font-size: 1.4rem;     /* bigger arrow */
+  line-height: 0;        /* fixes centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;       /* micro-adjust for perfect optical centering */
+  transition: transform 0.25s ease;
+}
+
+/* Hover interactions */
+.arrow-btn:hover .arrow-circle {
+  transform: translateX(4px);
+  background: rgba(255,255,255,0.28);
+  border: 1px solid var(--white);
+  
+}
+
+.arrow-btn:hover {
+    border: 1px solid var(--white);
+}
+
+.arrow-btn:hover .arrow {
+  transform: translateX(3px);
+}

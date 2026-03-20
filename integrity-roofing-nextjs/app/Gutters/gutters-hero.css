@@ -1,0 +1,94 @@
+.gutters-page-hero {
+  position: relative; 
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gutters-page-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(1.15);
+  transform: scale(1.1);
+  animation: zoomOut 10s ease-in-out forwards;
+  display: block;
+}
+
+/* Dark overlay */
+.gutters-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* Text overlay + button*/
+.gutters-page-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* above overlay */
+  color: var(--white);
+  text-align: center;
+  padding: 0 5vw;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.gutters-page-text-overlay p {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  line-height: 1.5;
+  font-weight: 100;
+  padding-bottom: 40px;
+}
+
+
+
+/* Mobile / tablet responsiveness */
+@media (max-width: 1024px) {
+  .gutters-page-text-overlay {
+    top: 30%;                 /* slightly higher for medium screens */
+    transform: translateX(-50%);
+  }
+  .gutters-page-text-overlay p {
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.gutters-page-text-overlay h1 {
+  text-align: left;
+}
+  
+  
+}
+
+@media (max-width: 768px) {
+  .gutters-page-text-overlay {
+    top: 5%;                 /* move up more on small screens */
+
+  }
+
+  .gutters-page-hero {
+    position: relative; /* fix sticky issue */
+    width: 100%;
+  }
+
+  .gutters-page-text-overlay p {
+    padding-bottom: 10px;
+  }
+
+}
+
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
